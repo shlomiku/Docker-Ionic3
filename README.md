@@ -5,16 +5,15 @@ This is the base template for Ionic starter apps.
 
 ## Using this project
 
-Install the latest Ionic CLI:
+You need docker and docker compose installed
 
-```bash
-$ npm install -g ionic
-```
+run this command:
 
-Then run:
+docker-compose -f dev.yml up -d
 
-```bash
-$ ionic start myApp
+image will contain all node packages required to run
+
+put your code in the src/pages folder
 ```
 
 More info on this can be found on the Ionic [Getting Started](http://ionicframework.com/docs/v2/getting-started/) page.
