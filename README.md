@@ -11,11 +11,32 @@ run this command:
 
 docker-compose -f dev.yml up -d
 
-image will contain all node packages required to run
+you can also run it using docker like this:
+
+docker run -it -v \`pwd\`:/opt/project -v /opt/project/node_modules -p 8100:8100 <image_name>
+
+where image name is the built image name ( you build it using docker-compose up ) and may be obtained using 
+`"docker images | grep ionic"`
+
+the image will contain all node packages required to run
 
 put your code in the src/pages folder
 
-you can now browse to your app under port 8100 (ip should be checked via docker)
+support for google maps was added, and in order for that to work you must add you google api key. this key may be obtained through this link:
+
+https://developers.google.com/maps/documentation/javascript/get-api-key
+
+and should be copied to :
+
+/src/app/app.module.ts like so:
+
+```imports: [
+    BrowserModule,
+    IonicModule.forRoot(MyApp),
+    AgmCoreModule.forRoot({
+      apiKey: 'your key here'       <----------------------  key goes here
+    })
+  ],
 ```
 
-More info on this can be found on the Ionic [Getting Started](http://ionicframework.com/docs/v2/getting-started/) page.
+you can now browse to your app under port 8100 (ip should be checked via docker)
