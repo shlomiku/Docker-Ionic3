@@ -1,11 +1,22 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      About
+      Google Map
     </ion-title>
   </ion-navbar>
 </ion-header>
 
+
+
 <ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <sebm-google-map [latitude]="51.503364051" [longitude]="-0.1276250" [zoom]="15">
+
+        </sebm-google-map>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>
