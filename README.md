@@ -8,14 +8,17 @@ This is the base template for Ionic starter apps.
 You need docker and docker compose installed
 
 run this command:
+docker-compose -f dev.yml build
 
-docker-compose -f dev.yml up -d
+now you have two ways to run the container:
 
-you can also run it using docker like this:
+1. docker-compose -f dev.yml up -d
 
-docker run -it -v \`pwd\`:/opt/project -v /opt/project/node_modules -p 8100:8100 <image_name>
+2. you can also run it using docker like this:
 
-where image name is the built image name ( you build it using docker-compose up ) and may be obtained using 
+```docker run -it -v `pwd`:/opt/project -v /opt/project/node_modules -p 8100:8100 <image_name>```
+
+where image name is the built image name ( you build it using docker-compose build ) and may be obtained using 
 `"docker images | grep ionic"`
 
 the image will contain all node packages required to run
